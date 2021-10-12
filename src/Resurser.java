@@ -8,7 +8,7 @@ public class Resurser {
     //Variabler
     int wood = 0;
     int gold = 0;
-    int minerals = 0;
+    int metal = 0;
 
     //updateResources metoden printer hvor mange resurser der er samlet. Den printer hvert femte sekund.
     public void updateResources() {
@@ -18,6 +18,8 @@ public class Resurser {
             public void run() {
                 System.out.println("Amount of Wood: "+ wood);
                 System.out.println("Amount of Gold: " + gold);
+                System.out.println("Amount of Metal: "+ metal);
+                System.out.println();
             }
         };
         final ScheduledFuture<?> updateWoodPrSecondHandle = botScheduler.scheduleWithFixedDelay(updateWoodPrSecond,0,5,SECONDS);
@@ -47,6 +49,18 @@ public class Resurser {
         final ScheduledFuture<?> goldPrSecondHandle = botScheduler.scheduleWithFixedDelay(woodPrSecond,0,2,SECONDS);
     }
 
+    //metal() metoden giver os 1 metal hvert 5 sekund.
+    public void metal() {
+        final ScheduledExecutorService botScheduler = Executors.newScheduledThreadPool(1);
+        final Runnable metalPrSecond = new Runnable() {
+            @Override
+            public void run() {
+                metal = metal + 1;
+            }
+        };
+        final ScheduledFuture<?> goldPrSecondHandle = botScheduler.scheduleWithFixedDelay(metalPrSecond,0,5,SECONDS);
+    }
+
     //Getters og setters metoder
     public int getWood() {
         return wood;
@@ -64,11 +78,11 @@ public class Resurser {
         this.gold = gold;
     }
 
-    public int getMinerals() {
-        return minerals;
+    public int getMetal() {
+        return metal;
     }
 
-    public void setMinerals(int minerals) {
-        this.minerals = minerals;
+    public void setMetal(int metal) {
+        this.metal = metal;
     }
 }
