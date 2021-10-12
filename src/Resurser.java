@@ -5,10 +5,12 @@ import java.util.concurrent.ScheduledFuture;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 public class Resurser {
+    //Variabler
     int wood = 0;
     int gold = 0;
     int minerals = 0;
 
+    //updateWood() metoden printer hvor meget wood (træ) der er samlet. Den printer hvert femte sekund.
     public void updateWood() {
         final ScheduledExecutorService botScheduler = Executors.newScheduledThreadPool(1);
         final Runnable updateWoodPrSecond = new Runnable() {
@@ -17,9 +19,10 @@ public class Resurser {
                 System.out.println("Amount of Wood: "+ wood);
             }
         };
-        final ScheduledFuture<?> updateWoodPrSecondHandle = botScheduler.scheduleWithFixedDelay(updateWoodPrSecond,0,1,SECONDS);
+        final ScheduledFuture<?> updateWoodPrSecondHandle = botScheduler.scheduleWithFixedDelay(updateWoodPrSecond,0,5,SECONDS);
     }
 
+    //wood() metoden giver os 1 wood(træ) hvert sekund
     public void wood() {
         final ScheduledExecutorService botScheduler = Executors.newScheduledThreadPool(1);
         final Runnable woodPrSecond = new Runnable() {
@@ -31,7 +34,7 @@ public class Resurser {
         final ScheduledFuture<?> woodPrSecondHandle = botScheduler.scheduleWithFixedDelay(woodPrSecond,0,1,SECONDS);
     }
 
-
+    //Getters og setters metoder
     public int getWood() {
         return wood;
     }
