@@ -5,8 +5,8 @@ public class Main {
         Resurser resurser = new Resurser();
 
         resurser.wood();
-
-        resurser.updateWood();
+        resurser.updateResources();
+        resurser.gold();
 
     }
 }

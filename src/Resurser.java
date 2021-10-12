@@ -10,19 +10,20 @@ public class Resurser {
     int gold = 0;
     int minerals = 0;
 
-    //updateWood() metoden printer hvor meget wood (træ) der er samlet. Den printer hvert femte sekund.
-    public void updateWood() {
+    //updateResources metoden printer hvor mange resurser der er samlet. Den printer hvert femte sekund.
+    public void updateResources() {
         final ScheduledExecutorService botScheduler = Executors.newScheduledThreadPool(1);
         final Runnable updateWoodPrSecond = new Runnable() {
             @Override
             public void run() {
                 System.out.println("Amount of Wood: "+ wood);
+                System.out.println("Amount of Gold: " + gold);
             }
         };
         final ScheduledFuture<?> updateWoodPrSecondHandle = botScheduler.scheduleWithFixedDelay(updateWoodPrSecond,0,5,SECONDS);
     }
 
-    //wood() metoden giver os 1 wood(træ) hvert sekund
+    //wood() metoden giver os 1 wood(træ) hvert sekund.
     public void wood() {
         final ScheduledExecutorService botScheduler = Executors.newScheduledThreadPool(1);
         final Runnable woodPrSecond = new Runnable() {
@@ -32,6 +33,18 @@ public class Resurser {
             }
         };
         final ScheduledFuture<?> woodPrSecondHandle = botScheduler.scheduleWithFixedDelay(woodPrSecond,0,1,SECONDS);
+    }
+
+    //gold() metoden giver os 1 gold hver andet sekund.
+    public void gold() {
+        final ScheduledExecutorService botScheduler = Executors.newScheduledThreadPool(1);
+        final Runnable woodPrSecond = new Runnable() {
+            @Override
+            public void run() {
+                gold = gold + 1;
+            }
+        };
+        final ScheduledFuture<?> goldPrSecondHandle = botScheduler.scheduleWithFixedDelay(woodPrSecond,0,2,SECONDS);
     }
 
     //Getters og setters metoder
