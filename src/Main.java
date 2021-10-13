@@ -59,6 +59,30 @@ public class Main {
                 army.setSorcerer(army.getSorcerer()+1);
                 System.out.println(army.getSorcerer());
             }
+            if (input.equals("sorcerer")) {
+                System.out.println("              _,-'|\n" +
+                        "           ,-'._  |\n" +
+                        " .||,      |####\\ |\n" +
+                        "\\.`',/     \\####| |\n" +
+                        "= ,. =      |###| |\n" +
+                        "/ || \\    ,-'\\#/,'`.\n" +
+                        "  ||     ,'   `,,. `.\n" +
+                        "  ,|____,' , ,;' \\| |\n" +
+                        " (3|\\    _/|/'   _| |\n" +
+                        "  ||/,-''  | >-'' _,\\\\\n" +
+                        "  ||'      ==\\ ,-'  ,'\n" +
+                        "  ||       |  V \\ ,|\n" +
+                        "  ||       |    |` |\n" +
+                        "  ||       |    |   \\\n" +
+                        "  ||       |    \\    \\\n" +
+                        "  ||       |     |    \\\n" +
+                        "  ||       |      \\_,-'\n" +
+                        "  ||       |___,,--\")_\\\n" +
+                        "  ||         |_|   ccc/\n" +
+                        "  ||        ccc/\n" +
+                        "  ||                ");
+                System.out.println("You have " + army.getSorcerer() + " sorcerers. Type buysorcerer to buy a sorcerer for 60 Gold, 30 Wood and 20 Metal.");
+            }
         }
 
 
