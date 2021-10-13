@@ -9,9 +9,9 @@ public class Resurser {
     int wood = 0;
     int gold = 0;
     int metal = 0;
-    int woodFarmer = 0;
-    int goldFarmer = 0;
-    int metalFarmer = 0;
+    int woodFarmer = 1;
+    int goldFarmer = 1;
+    int metalFarmer = 1;
 
     //updateResources metoden printer hvor mange resurser der er samlet. Den printer hvert femte sekund.
     public void updateResources() {
@@ -28,7 +28,7 @@ public class Resurser {
         final ScheduledFuture<?> updateWoodPrSecondHandle = botScheduler.scheduleWithFixedDelay(updateWoodPrSecond,0,5,SECONDS);
     }
 
-    //wood() metoden giver os 1 wood(træ) hvert 4 sekund.
+    //wood() metoden giver os 1 wood(træ) hvert 5 sekund.
     public void wood() {
         final ScheduledExecutorService botScheduler = Executors.newScheduledThreadPool(1);
         final Runnable woodPrSecond = new Runnable() {

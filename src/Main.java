@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        //Henter metoderne fra Resurser og Army klasserne.
+        //Henter metoderne og variabler fra Resurser og Army klasserne.
         Resurser resurser = new Resurser();
         Army army = new Army();
 
@@ -17,8 +17,9 @@ public class Main {
 
         while (true) {
             System.out.println();
-            System.out.print("Write what you wish to do.\nTo show the amount of wood, gold or metal you have, show your income, and show your army, write status." +
-                    "\nTo show the cost of knights, write knight. \nTo show the cost of sorcerers, write sorcerer. ");
+            System.out.print("Write what you wish to do.\nTo show the amount of wood, gold or metal you have,your income, and your army, write status." +
+                    "\nTo show the cost of knights, write knight. \nTo show the cost of sorcerers, write sorcerer." +
+                    "\nTo show the cost of more wood, gold and metal farmers, write farmers. Each farmer increase your income by 1.");
             Scanner scanner = new Scanner(System.in);
             String input = scanner.nextLine();
             //Type 0 to break loop
@@ -26,7 +27,11 @@ public class Main {
                 break;
             }
             if (input.equals("status")) {
-                System.out.println("Wood: " + resurser.getWood() + "\nGold: " + resurser.getGold() + "\nMetal: " + resurser.getMetal() + "\nKnights: " + army.getKnight() + "\nSorcerers: " + army.getSorcerer());
+                System.out.println("Wood: " + resurser.getWood() + ". Income: " + resurser.getWoodFarmer() + " wood every 5 seconds." +
+                        "\nGold: " + resurser.getGold() + ". Income: " + resurser.getGoldFarmer() + " gold every 2 seconds." +
+                        "\nMetal: " + resurser.getMetal() + ". Income: " + resurser.getMetalFarmer() + " wood every 10 seconds." +
+                        "\nKnights: " + army.getKnight() +
+                        "\nSorcerers: " + army.getSorcerer());
             }
             if (input.equals("knight")) {
                 System.out.println("   .\n" +
@@ -82,6 +87,11 @@ public class Main {
                         "  ||        ccc/\n" +
                         "  ||                ");
                 System.out.println("You have " + army.getSorcerer() + " sorcerers. Type buysorcerer to buy a sorcerer for 60 Gold, 30 Wood and 20 Metal.");
+            }
+            if (input.equals("farmers")) {
+                System.out.println("You have " + resurser.getWoodFarmer() + " wood farmers. Type buywoodfarmer to buy a wood farmer for 10 gold and 10 wood.");
+                System.out.println("You have " + resurser.getGoldFarmer() + " gold farmers. Type buygoldfarmer to buy a gold farmer for 20 gold.");
+                System.out.println("You have " + resurser.getMetalFarmer() + " metal farmers. Type buymetalfarmer to buy a metal farmer for 30 gold, 10 wood and 5 metal.");
             }
         }
 
