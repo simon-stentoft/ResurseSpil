@@ -16,7 +16,9 @@ public class Main {
 
 
         while (true) {
-            System.out.print("Write what you wish to do.\nTo show the amount of wood, gold or metal you have, write status. ");
+            System.out.println();
+            System.out.print("Write what you wish to do.\nTo show the amount of wood, gold or metal you have, show your income, and show your army, write status." +
+                    "\nTo show the cost of knights, write knight. \nTo show the cost of sorcerers, write sorcerer. ");
             Scanner scanner = new Scanner(System.in);
             String input = scanner.nextLine();
             //Type 0 to break loop
@@ -24,7 +26,7 @@ public class Main {
                 break;
             }
             if (input.equals("status")) {
-                System.out.println("Wood: " + resurser.getWood() + "\nGold: " + resurser.getGold() + "\nMetal: " + resurser.getMetal());
+                System.out.println("Wood: " + resurser.getWood() + "\nGold: " + resurser.getGold() + "\nMetal: " + resurser.getMetal() + "\nKnights: " + army.getKnight() + "\nSorcerers: " + army.getSorcerer());
             }
             if (input.equals("knight")) {
                 System.out.println("   .\n" +
@@ -52,6 +54,10 @@ public class Main {
             if (input.equals("buyknight")) {
                 army.setKnight(army.getKnight()+1);
                 System.out.println(army.getKnight());
+            }
+            if (input.equals("buysorcerer")) {
+                army.setSorcerer(army.getSorcerer()+1);
+                System.out.println(army.getSorcerer());
             }
         }
 
