@@ -9,6 +9,9 @@ public class Resurser {
     int wood = 0;
     int gold = 0;
     int metal = 0;
+    int woodFarmer = 0;
+    int goldFarmer = 0;
+    int metalFarmer = 0;
 
     //updateResources metoden printer hvor mange resurser der er samlet. Den printer hvert femte sekund.
     public void updateResources() {
@@ -25,7 +28,7 @@ public class Resurser {
         final ScheduledFuture<?> updateWoodPrSecondHandle = botScheduler.scheduleWithFixedDelay(updateWoodPrSecond,0,5,SECONDS);
     }
 
-    //wood() metoden giver os 1 wood(træ) hvert sekund.
+    //wood() metoden giver os 1 wood(træ) hvert 4 sekund.
     public void wood() {
         final ScheduledExecutorService botScheduler = Executors.newScheduledThreadPool(1);
         final Runnable woodPrSecond = new Runnable() {
@@ -34,10 +37,10 @@ public class Resurser {
                 wood = wood + 1;
             }
         };
-        final ScheduledFuture<?> woodPrSecondHandle = botScheduler.scheduleWithFixedDelay(woodPrSecond,0,1,SECONDS);
+        final ScheduledFuture<?> woodPrSecondHandle = botScheduler.scheduleWithFixedDelay(woodPrSecond,0,5,SECONDS);
     }
 
-    //gold() metoden giver os 1 gold hver andet sekund.
+    //gold() metoden giver os 1 gold hvert 2 sekund.
     public void gold() {
         final ScheduledExecutorService botScheduler = Executors.newScheduledThreadPool(1);
         final Runnable woodPrSecond = new Runnable() {
@@ -49,7 +52,7 @@ public class Resurser {
         final ScheduledFuture<?> goldPrSecondHandle = botScheduler.scheduleWithFixedDelay(woodPrSecond,0,2,SECONDS);
     }
 
-    //metal() metoden giver os 1 metal hvert 5 sekund.
+    //metal() metoden giver os 1 metal hvert 10 sekund.
     public void metal() {
         final ScheduledExecutorService botScheduler = Executors.newScheduledThreadPool(1);
         final Runnable metalPrSecond = new Runnable() {
@@ -58,10 +61,33 @@ public class Resurser {
                 metal = metal + 1;
             }
         };
-        final ScheduledFuture<?> goldPrSecondHandle = botScheduler.scheduleWithFixedDelay(metalPrSecond,0,5,SECONDS);
+        final ScheduledFuture<?> goldPrSecondHandle = botScheduler.scheduleWithFixedDelay(metalPrSecond,0,10,SECONDS);
     }
 
     //Getters og setters metoder
+
+    public int getWoodFarmer() {
+        return woodFarmer;
+    }
+
+    public void setWoodFarmer(int woodFarmer) {
+        this.woodFarmer = woodFarmer;
+    }
+
+    public int getGoldFarmer() {
+        return goldFarmer;
+    }
+
+    public void setGoldFarmer(int goldFarmer) {
+        this.goldFarmer = goldFarmer;
+    }
+
+    public int getMetalFarmer() {
+        return metalFarmer;
+    }
+
+    public void setMetalFarmer(int metalFarmer) {this.metalFarmer = metalFarmer;}
+
     public int getWood() {
         return wood;
     }
