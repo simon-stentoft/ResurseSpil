@@ -14,12 +14,32 @@ public class Main {
         resurser.gold();
         resurser.metal();
 
+        System.out.println("                                  |>>>\n" +
+                "                                  |\n" +
+                "                    |>>>      _  _|_  _         |>>>\n" +
+                "                    |        |;| |;| |;|        |\n" +
+                "                _  _|_  _    \\\\.    .  /    _  _|_  _\n" +
+                "               |;|_|;|_|;|    \\\\:. ,  /    |;|_|;|_|;|\n" +
+                "               \\\\..      /    ||;   . |    \\\\.    .  /\n" +
+                "                \\\\.  ,  /     ||:  .  |     \\\\:  .  /\n" +
+                "                 ||:   |_   _ ||_ . _ | _   _||:   |\n" +
+                "                 ||:  .|||_|;|_|;|_|;|_|;|_|;||:.  |\n" +
+                "                 ||:   ||.    .     .      . ||:  .|\n" +
+                "                 ||: . || .     . .   .  ,   ||:   |       \\,/\n" +
+                "                 ||:   ||:  ,  _______   .   ||: , |            /`\\\n" +
+                "                 ||:   || .   /+++++++\\    . ||:   |\n" +
+                "                 ||:   ||.    |+++++++| .    ||: . |\n" +
+                "              __ ||: . ||: ,  |+++++++|.  . _||_   |\n" +
+                "     ____--`~    '--~~__|.    |+++++__|----~    ~`---,              ___\n" +
+                "-~--~                   ~---__|,--~'                  ~~----_____-~'   `~----~~");
+        System.out.println("Resource game made by Simon.");
 
         while (true) {
             System.out.println();
             System.out.print("Write what you wish to do.\nTo show the amount of wood, gold or metal you have, your income, and your army, write status." +
                     "\nTo show the cost of knights, write knight. \nTo show the cost of sorcerers, write sorcerer." +
                     "\nTo show the cost of more wood, gold and metal farmers, write farmers. Each farmer increases your income by 1. ");
+            System.out.println();
             Scanner scanner = new Scanner(System.in);
             String input = scanner.nextLine();
             //Type 0 to break loop
@@ -63,7 +83,8 @@ public class Main {
                     resurser.setMetal(resurser.getMetal() - 5);
                     army.setKnight(army.getKnight() + 1);
                     System.out.println("You now have " + army.getKnight() + " knights.");
-                }
+                } else
+                    System.out.println("You do not have enough resources to buy a knight.");
             }
             if (input.equals("buysorcerer")) {
                 if (resurser.getGold() >= 60 && resurser.getWood() >= 30 && resurser.getMetal() >=  15) {
@@ -72,7 +93,8 @@ public class Main {
                     resurser.setMetal(resurser.getMetal() - 15);
                     army.setSorcerer(army.getSorcerer() + 1);
                     System.out.println("You now have " + army.getSorcerer() + " sorcerers.");
-                }
+                } else
+                    System.out.println("You do not have enough resources to buy a sorcerer.");
             }
             if (input.equals("sorcerer")) {
                 System.out.println("              _,-'|\n" +
@@ -117,7 +139,7 @@ public class Main {
                 if (resurser.getGold() >= 20) {
                     resurser.setGoldFarmer(resurser.getGoldFarmer() + 1);
                     resurser.setGold(resurser.getGold() - 20);
-                    System.out.println("Your gold income has increased to " + resurser.getWoodFarmer() + ".");
+                    System.out.println("Your gold income has increased to " + resurser.getGoldFarmer() + ".");
                     resurser.gold();
                 } else
                     System.out.println("You do not have enough resources to buy a gold farmer.");
@@ -134,28 +156,5 @@ public class Main {
                     System.out.println("You do not have enough resources to buy a metal farmer.");
             }
         }
-
-
-        //Fil med liste over resurser.
-      /*  try {
-            File fileScore = new File("Resurser.txt");
-            if (fileScore.createNewFile()) {
-                System.out.println("File was created: " + fileScore.getName());
-            } else {
-                System.out.println("Resurser.txt file already exists.");
-            }
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-        //Skriver til filen.
-        try {
-            FileWriter fileWriter = new FileWriter("Resurser.txt");
-            fileWriter.write(resurser.getGold());
-            fileWriter.close();
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }*/
     }
 }

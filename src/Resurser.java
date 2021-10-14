@@ -13,21 +13,6 @@ public class Resurser {
     private int goldFarmer = 1;
     private int metalFarmer = 1;
 
-    //updateResources metoden printer hvor mange resurser der er samlet. Den printer hvert femte sekund.
-    public void updateResources() {
-        final ScheduledExecutorService botScheduler = Executors.newScheduledThreadPool(1);
-        final Runnable updateWoodPrSecond = new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("Amount of Wood: "+ wood);
-                System.out.println("Amount of Gold: " + gold);
-                System.out.println("Amount of Metal: "+ metal);
-                System.out.println();
-            }
-        };
-        final ScheduledFuture<?> updateWoodPrSecondHandle = botScheduler.scheduleWithFixedDelay(updateWoodPrSecond,0,5,SECONDS);
-    }
-
     //wood() metoden giver os 1 wood(træ) hvert 5 sekund.
     public void wood() {
         final ScheduledExecutorService botScheduler = Executors.newScheduledThreadPool(1);
