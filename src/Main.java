@@ -39,7 +39,7 @@ public class Main {
             System.out.print("Write what you wish to do.\nTo show the amount of wood, gold or metal you have, your income, and your army, write status." +
                     "\nTo show the cost of knights, write knight. \nTo show the cost of sorcerers, write sorcerer." +
                     "\nTo show the cost of more wood, gold and metal farmers, write farmers. Each farmer increases your income by 1. ");
-            System.out.println();
+            System.out.print("");
             Scanner scanner = new Scanner(System.in);
             String input = scanner.nextLine();
             //Type 0 to break loop
