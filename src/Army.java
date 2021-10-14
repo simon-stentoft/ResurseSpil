@@ -1,7 +1,7 @@
 public class Army {
     //Variabler
-    int knight = 0;
-    int sorcerer = 0;
+    private int knight = 0;
+    private int sorcerer = 0;
 
 
 

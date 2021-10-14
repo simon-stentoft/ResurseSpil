@@ -6,12 +6,12 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 
 public class Resurser {
     //Variabler
-    int wood = 0;
-    int gold = 0;
-    int metal = 0;
-    int woodFarmer = 1;
-    int goldFarmer = 1;
-    int metalFarmer = 1;
+    private int wood = 0;
+    private int gold = 0;
+    private int metal = 0;
+    private int woodFarmer = 1;
+    private int goldFarmer = 1;
+    private int metalFarmer = 1;
 
     //updateResources metoden printer hvor mange resurser der er samlet. Den printer hvert femte sekund.
     public void updateResources() {

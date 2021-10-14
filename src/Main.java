@@ -57,12 +57,22 @@ public class Main {
                 System.out.println("You have " + army.getKnight() + " knights. Type buyknight to buy a knight for 20 Gold, 10 Wood and 5 Metal.");
             }
             if (input.equals("buyknight")) {
-                army.setKnight(army.getKnight() + 1);
-                System.out.println("You now have " + army.getKnight() + ".");
+                if (resurser.getGold() >= 20 && resurser.getWood() >= 10 && resurser.getMetal() >=  5) {
+                    resurser.setGold(resurser.getGold() - 20);
+                    resurser.setWood(resurser.getWood() - 10);
+                    resurser.setMetal(resurser.getMetal() - 5);
+                    army.setKnight(army.getKnight() + 1);
+                    System.out.println("You now have " + army.getKnight() + " knights.");
+                }
             }
             if (input.equals("buysorcerer")) {
-                army.setSorcerer(army.getSorcerer() + 1);
-                System.out.println("You now have " + army.getSorcerer() + ".");
+                if (resurser.getGold() >= 60 && resurser.getWood() >= 30 && resurser.getMetal() >=  15) {
+                    resurser.setGold(resurser.getGold() - 60);
+                    resurser.setWood(resurser.getWood() - 30);
+                    resurser.setMetal(resurser.getMetal() - 15);
+                    army.setSorcerer(army.getSorcerer() + 1);
+                    System.out.println("You now have " + army.getSorcerer() + " sorcerers.");
+                }
             }
             if (input.equals("sorcerer")) {
                 System.out.println("              _,-'|\n" +
@@ -86,7 +96,7 @@ public class Main {
                         "  ||         |_|   ccc/\n" +
                         "  ||        ccc/\n" +
                         "  ||                ");
-                System.out.println("You have " + army.getSorcerer() + " sorcerers. Type buysorcerer to buy a sorcerer for 60 Gold, 30 Wood and 20 Metal.");
+                System.out.println("You have " + army.getSorcerer() + " sorcerers. Type buysorcerer to buy a sorcerer for 60 Gold, 30 Wood and 15 Metal.");
             }
             if (input.equals("farmers")) {
                 System.out.println("You have " + resurser.getWoodFarmer() + " wood farmers. Type buywoodfarmer to buy a wood farmer for 10 gold and 10 wood.");
