@@ -49,7 +49,7 @@ public class Main {
             if (input.equals("status")) {
                 System.out.println("Wood: " + resurser.getWood() + ". Income: " + resurser.getWoodFarmer() + " wood every 5 seconds." +
                         "\nGold: " + resurser.getGold() + ". Income: " + resurser.getGoldFarmer() + " gold every 2 seconds." +
-                        "\nMetal: " + resurser.getMetal() + ". Income: " + resurser.getMetalFarmer() + " wood every 10 seconds." +
+                        "\nMetal: " + resurser.getMetal() + ". Income: " + resurser.getMetalFarmer() + " metal every 10 seconds." +
                         "\nKnights: " + army.getKnight() +
                         "\nSorcerers: " + army.getSorcerer());
             }
